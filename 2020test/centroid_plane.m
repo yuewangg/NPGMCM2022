@@ -1,5 +1,5 @@
 function [Mm_plane]=centroid_plane(Mm,V_residue)
-load('INIT.mat')
+load('INIT.mat') % 飞行器参数
 for i=1:6
     x(i)=Mm(i,1);
     y(i)=Mm(i,2);
