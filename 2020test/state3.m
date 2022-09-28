@@ -1,10 +1,12 @@
 function [x y z]=state3(a,b,c,alpha,v,x0,y0,z0)
 a1=sqrt((2*a*c-(2*v/(b*850)))/tand(alpha));
 c1=a1*tand(alpha);
+
 A=[cosd(alpha) 0 -sind(alpha) 0
        0      1      0      0
    sind(alpha) 0 cosd(alpha)  0
        0      0      0      1];
+       
 u=[x0,y0,z0,1]*A;
 x1=u(1);
 y1=u(2);

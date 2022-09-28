@@ -1,10 +1,12 @@
 function [x y z]=state2(a,b,c,alpha,v,x0,y0,z0)
 c1=(v/850)/(a*b)-0.5*a*tand(alpha);
 c2=c1+a*tand(alpha);
+
 A=[cosd(alpha) 0 -sind(alpha) 0
        0      1      0      0
    sind(alpha) 0 cosd(alpha)  0
        0      0      0      1];
+       
 u=[x0,y0,z0,1]*A;
 x1=u(1);
 y1=u(2);

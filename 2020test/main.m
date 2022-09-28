@@ -42,11 +42,11 @@ for t1=1:t
                 Mm(t1,i,:)=[x y z];
             elseif v(t1,i) > VT3(t1,i)*850 && v(t1,i) <= VT4(t1,i)*850
                 
-                [x,y,z]=state5(a(i),b(i),c(i),alpha(t1),v(t1,i),INIT(i,1),INIT(i,2),INIT(i,3));
+                [x,y,z]=state2(a(i),b(i),c(i),alpha(t1),v(t1,i),INIT(i,1),INIT(i,2),INIT(i,3));
                 Mm(t1,i,:)=[x y z];
             elseif v(t1,i) > VT4(t1,i)*850 && v(t1,i) <= Vm(i)*850
                 
-                [x,y,z]=state6(a(i),b(i),c(i),alpha(t1),v(t1,i),INIT(i,1),INIT(i,2),INIT(i,3));
+                [x,y,z]=state3(a(i),b(i),c(i),alpha(t1),v(t1,i),INIT(i,1),INIT(i,2),INIT(i,3));
                 Mm(t1,i,:)=[x y z];
             end
         end
