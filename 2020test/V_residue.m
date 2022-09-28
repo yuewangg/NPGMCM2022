@@ -1,11 +1,11 @@
 function [v]=V_residue(t)
-%t=7199;
+% t=7199;
 v=zeros(1,6);
 m=zeros(t+1,6);
 x=zeros();
 x(1)=0;
-load('Vi.mat')  %供油曲线数据
-load('INIT.mat') %飞行器参数
+load('Vi.mat')  % 供油曲线数据
+load('INIT.mat') % 飞行器参数
 m(1,:)=INIT(:,7)'*850;
 A=[1 -1 0 0 0 0
     0 1 0 0 0 0
