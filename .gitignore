@@ -6,3 +6,7 @@
 *.xls
 *.xlsx
 *.pdf
+*.mat
+*.m
+*.mlx
+*.py
