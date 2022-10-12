@@ -1,4 +1,4 @@
-#*.npy
+*.npy
 *.jpg
 *.png
 #*.docx
@@ -6,8 +6,11 @@
 *.xls
 *.xlsx
 *.pdf
-#*.mat
+*.mat
 #*.m
 *.mlx
 *.py
 *.zip
+*.bmp
+*.fig
+*.psd
