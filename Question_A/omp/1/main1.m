@@ -10,11 +10,11 @@ L=0.0815;
 gamma=78.986e12;
 Na=86;
 f0=78.8e9;
-c=299792458;
+c=3e8;
 lamda=c/f0;
 
 %载入数据
-load('../data/data_q1.mat');
+load('data_q1.mat');
 
 %先对单个chirp信号内的中频信号进行FFT处理转换为距离估计
 Z2=Z.*(ones(Na,1)*hamming(N)');

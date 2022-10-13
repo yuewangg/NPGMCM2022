@@ -21,7 +21,7 @@ Resl=0.001;
 AntDis=L/(Na-1);
 
 % %载入数据
-load('../data/data_q4.mat');
+load('data_q4.mat');
 Z=Z_antnoisy;
 
 %% 改进前的FFT算法处理
@@ -44,7 +44,7 @@ contourf(1:Na,DisA,log10(abs(Zf1))*20,100,'linestyle','none');
 axis([ 1 Na 0 DisA(end)]);
 ylabel('距离/m');xlabel('天线编号');
 title('每个天线单独进行测距结果');
-
+ 
 
 figure(2);
 plot(AngSeq/pi*180,abs(Zf2(PhiInd,DelayInd)));
@@ -80,7 +80,6 @@ RTmp=RSeq(Ind);
 AngSeq2=(-1:Resl:1);
 AntLoc=[0:Na-1]*AntDis;
 obj=@(x) fobj(x,AntLoc,lamda,Na,AngSeq2,DataTmp);
-
 gbest=pso(obj,Na-1);
 
  AntLoc2=AntLoc+[0 gbest]*lamda;
@@ -90,7 +89,7 @@ for jj=1:length(RTmp)
     [Sest]=OMP(DataTmp(jj,:)',Dic,10);
     [Ind]=find(abs(Sest)>0);
     AngSelOld=AngSeq2(Ind);
-
+    
     DisRes(jj)=RTmp(jj);
     AngRes(jj)=AngSelOld(1);
 end
@@ -101,7 +100,7 @@ for jj=1:length(RTmp)
     [Sest]=OMP(DataTmp(jj,:)',Dic,10);
     [Ind]=find(abs(Sest)>0);
     AngSelOld=AngSeq2(Ind);
-
+    
     DisRes2(jj)=RTmp(jj);
     AngRes2(jj)=AngSelOld(1);
 end
@@ -114,5 +113,5 @@ legend('理想天线位置','估计的实际天线位置');
 figure(6);clf;hold on;
 plot(DisRes,AngRes,'bo')
 plot(DisRes2,AngRes2,'rx');
-%legend('纠正前估计位置','纠正后估计位置');
+legend('纠正前估计位置','纠正后估计位置');
 
