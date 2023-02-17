@@ -1,13 +1,13 @@
 *.npy
 *.jpg
 *.png
-#*.docx
+# *.docx
 *.doc
 *.xls
 *.xlsx
-*.pdf
+# *.pdf
 *.mat
-#*.m
+# *.m
 *.mlx
 *.py
 *.zip
